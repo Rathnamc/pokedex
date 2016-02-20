@@ -11,6 +11,7 @@ import Foundation
 
 class Pokemon {
     
+    //Required variables to display Pokemon
     private var _name: String!
     private var _pokedexId: Int!
     
