@@ -42,7 +42,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Vve-rD-OU3">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Vve-rD-OU3" customClass="PokeCell" customModule="pokeDex" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -83,6 +83,10 @@
                                                 <exclude reference="yme-Hv-IWm"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <outlet property="nameLbl" destination="JsN-CO-EnK" id="iFC-4l-StW"/>
+                                            <outlet property="thumbImg" destination="rOR-19-YTb" id="A81-iG-liX"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
