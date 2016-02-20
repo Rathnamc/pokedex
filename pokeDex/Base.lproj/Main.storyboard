@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,11 +17,108 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="sUG-DF-kzZ">
+                                <rect key="frame" x="0.0" y="101" width="600" height="499"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gcC-5r-d7C">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="57"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.20000000000000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="p4P-Nj-aSu"/>
+                                </constraints>
+                            </view>
+                            <searchBar contentMode="redraw" ambiguous="YES" misplaced="YES" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="xRg-Aq-fa1">
+                                <rect key="frame" x="0.0" y="57" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Kev-TP-orN">
+                                <rect key="frame" x="20" y="124" width="560" height="456"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PvJ-lR-z1G">
+                                    <size key="itemSize" width="110" height="110"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Vve-rD-OU3">
+                                        <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="297" translatesAutoresizingMaskIntoConstraints="NO" id="rOR-19-YTb">
+                                                    <rect key="frame" x="0.0" y="0.0" width="110" height="86"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JsN-CO-EnK">
+                                                    <rect key="frame" x="0.0" y="86" width="110" height="24"/>
+                                                    <color key="backgroundColor" red="0.94901960780000005" green="0.20000000000000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="7Oa-wt-SY8"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="JsN-CO-EnK" firstAttribute="leading" secondItem="Vve-rD-OU3" secondAttribute="leading" id="1mO-Fm-Kg1"/>
+                                            <constraint firstAttribute="bottom" secondItem="JsN-CO-EnK" secondAttribute="bottom" id="8Sk-CQ-tB1"/>
+                                            <constraint firstItem="JsN-CO-EnK" firstAttribute="top" secondItem="rOR-19-YTb" secondAttribute="bottom" id="Ada-cZ-HFb"/>
+                                            <constraint firstAttribute="trailing" secondItem="JsN-CO-EnK" secondAttribute="trailing" id="OOx-Lx-00B"/>
+                                            <constraint firstItem="rOR-19-YTb" firstAttribute="top" secondItem="Vve-rD-OU3" secondAttribute="top" id="SPu-vk-Xxb"/>
+                                            <constraint firstItem="rOR-19-YTb" firstAttribute="leading" secondItem="Vve-rD-OU3" secondAttribute="leading" id="Siz-BM-1tm"/>
+                                            <constraint firstAttribute="trailing" secondItem="rOR-19-YTb" secondAttribute="trailing" id="TJG-fl-afS"/>
+                                            <constraint firstItem="JsN-CO-EnK" firstAttribute="top" secondItem="rOR-19-YTb" secondAttribute="bottom" id="ljS-xv-V1a"/>
+                                            <constraint firstItem="JsN-CO-EnK" firstAttribute="top" secondItem="rOR-19-YTb" secondAttribute="bottom" id="yme-Hv-IWm"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="ljS-xv-V1a"/>
+                                                <exclude reference="yme-Hv-IWm"/>
+                                            </mask>
+                                        </variation>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gcC-5r-d7C" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="4lX-6L-fia"/>
+                            <constraint firstItem="xRg-Aq-fa1" firstAttribute="top" secondItem="gcC-5r-d7C" secondAttribute="bottom" id="6Vf-0F-qli"/>
+                            <constraint firstItem="gcC-5r-d7C" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BqT-wk-d3G"/>
+                            <constraint firstItem="xRg-Aq-fa1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Hiu-LX-0Sk"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Kev-TP-orN" secondAttribute="bottom" constant="20" id="K8I-wQ-3jH"/>
+                            <constraint firstItem="sUG-DF-kzZ" firstAttribute="top" secondItem="xRg-Aq-fa1" secondAttribute="bottom" id="Lek-3I-KCv"/>
+                            <constraint firstItem="Kev-TP-orN" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="MnW-js-3rk"/>
+                            <constraint firstAttribute="trailing" secondItem="xRg-Aq-fa1" secondAttribute="trailing" id="Olc-AG-BbM"/>
+                            <constraint firstAttribute="trailing" secondItem="gcC-5r-d7C" secondAttribute="trailing" id="WKq-zy-o6w"/>
+                            <constraint firstItem="sUG-DF-kzZ" firstAttribute="top" secondItem="gcC-5r-d7C" secondAttribute="bottom" id="ZWd-js-suR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sUG-DF-kzZ" secondAttribute="bottom" id="gRT-4Q-EzX"/>
+                            <constraint firstItem="sUG-DF-kzZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="mKU-5f-1te"/>
+                            <constraint firstAttribute="trailing" secondItem="sUG-DF-kzZ" secondAttribute="trailing" id="u7A-gp-8tD"/>
+                            <constraint firstItem="Kev-TP-orN" firstAttribute="top" secondItem="xRg-Aq-fa1" secondAttribute="bottom" constant="20" id="ufh-K1-NMs"/>
+                            <constraint firstItem="Kev-TP-orN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="vNK-DQ-Lsv"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ZWd-js-suR"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="325" y="337"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="297" width="120" height="120"/>
+        <image name="bg" width="1920" height="1200"/>
+    </resources>
 </document>
