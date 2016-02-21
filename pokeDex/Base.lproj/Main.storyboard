@@ -11,6 +11,76 @@
         </mutableArray>
     </customFonts>
     <scenes>
+        <!--Pokemon DetailVC-->
+        <scene sceneID="7kg-1F-J5K">
+            <objects>
+                <viewController id="Tmj-yq-PMn" customClass="PokemonDetailVC" customModule="pokeDex" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZdT-QX-NuQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="se2-3U-qiP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BPn-aL-80s">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wjX-ar-TQR">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="57"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Charizard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4W-j2-cnp">
+                                        <rect key="frame" x="198" y="8" width="205" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="139" id="AeR-3f-olC"/>
+                                            <constraint firstAttribute="height" constant="31" id="FRq-Vi-JhF"/>
+                                            <constraint firstAttribute="height" constant="21" id="auD-Kh-56e"/>
+                                            <constraint firstAttribute="width" constant="205" id="nig-us-Aeb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="AeR-3f-olC"/>
+                                                <exclude reference="auD-Kh-56e"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AeZ-dr-g7b">
+                                        <rect key="frame" x="8" y="17" width="34" height="23"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="fis-NG-eYp"/>
+                                            <constraint firstAttribute="height" constant="23" id="xrr-ZK-qr6"/>
+                                        </constraints>
+                                        <state key="normal" image="back"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.20000000000000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="AeZ-dr-g7b" secondAttribute="bottom" constant="15" id="3DO-n6-dZS"/>
+                                    <constraint firstItem="i4W-j2-cnp" firstAttribute="centerY" secondItem="wjX-ar-TQR" secondAttribute="centerY" id="ML9-t9-jQh"/>
+                                    <constraint firstItem="i4W-j2-cnp" firstAttribute="centerX" secondItem="wjX-ar-TQR" secondAttribute="centerX" id="c4S-OE-YE5"/>
+                                    <constraint firstAttribute="height" constant="57" id="r3W-C2-d4i"/>
+                                    <constraint firstItem="AeZ-dr-g7b" firstAttribute="leading" secondItem="wjX-ar-TQR" secondAttribute="leading" constant="8" id="sR2-VZ-mbV"/>
+                                </constraints>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LNj-1h-o7X">
+                                <rect key="frame" x="20" y="82" width="560" height="29"/>
+                                <segments>
+                                    <segment title="Bio"/>
+                                    <segment title="Moves"/>
+                                </segments>
+                                <color key="tintColor" red="0.94901960780000005" green="0.20000000000000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="nameLbl" destination="i4W-j2-cnp" id="7xm-Q0-6nL"/>
+                        <outlet property="view" destination="BPn-aL-80s" id="umb-OP-otM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8ls-mZ-W1p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="662" y="202"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -156,15 +226,17 @@
                     <connections>
                         <outlet property="collection" destination="Kev-TP-orN" id="zdc-z3-b0x"/>
                         <outlet property="searchBar" destination="xRg-Aq-fa1" id="ffQ-VN-nbx"/>
+                        <segue destination="Tmj-yq-PMn" kind="show" identifier="PokemonDetailVC" id="35K-zx-Lhx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="323" y="332"/>
+            <point key="canvasLocation" x="-28" y="202"/>
         </scene>
     </scenes>
     <resources>
         <image name="297" width="120" height="120"/>
+        <image name="back" width="100" height="67"/>
         <image name="bg" width="1920" height="1200"/>
         <image name="music" width="100" height="100"/>
     </resources>
