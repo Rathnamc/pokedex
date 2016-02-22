@@ -170,7 +170,7 @@ class Pokemon {
                             if let descDict = descResult.value as? Dictionary<String, AnyObject> {
                                 
                                 if let description = descDict["description"] as? String {
-                                    self._description = description
+                                    self._description = description.stringByReplacingOccurrencesOfString("POKMON", withString: "POKEMON").stringByReplacingOccurrencesOfString("con vert", withString: "convert")
                                     print(self._description)
                                 }
                             }
