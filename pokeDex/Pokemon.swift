@@ -24,6 +24,14 @@ class Pokemon {
     private var _nextEvolutionId: String!
     private var _pokemonUrl: String!
     private var _nextEvolutionLvl: String!
+    private var _move: String!
+    
+    var move: String {
+        if _move == nil {
+            _move = ""
+        }
+        return _move
+    }
     
    
     var description: String {
@@ -139,6 +147,8 @@ class Pokemon {
                 print(self._attack)
                 print(self._defense)
                 
+                /* Types*/
+                
                 if let types = dict["types"] as? [Dictionary<String, String>] where types.count > 0 {
                     if let name = types[0]["name"] {
                         self._type = name.capitalizedString
@@ -158,6 +168,31 @@ class Pokemon {
                 }
                 
                 print(self._type)
+                
+                
+                /* Moves */
+                
+                if let moves = dict["moves"] as? [Dictionary<String, AnyObject>] where moves.count > 0 {
+                    if let move = moves[0]["name"] {
+                        self._move = "\(move)"
+                    }
+                    
+                    if moves.count > 1 {
+                        for var x = 1; x < 5; x++ {
+                            if let move = moves[x]["name"] {
+                                self._move! += " / \(move.capitalizedString) "
+                            }
+                        }
+                    }
+                    
+                } else {
+                    
+                    self._move = ""
+                }
+                
+               print(self._move)
+                
+                
                 
                 if let descArr = dict["descriptions"] as? [Dictionary<String, String>] where descArr.count > 0 {
                     

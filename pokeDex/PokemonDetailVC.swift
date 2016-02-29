@@ -33,6 +33,8 @@ class PokemonDetailVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
         nameLbl.text = pokemon.name.capitalizedString
         let img = UIImage(named: "\(pokemon.pokedexId)")
@@ -44,6 +46,20 @@ class PokemonDetailVC: UIViewController {
             self.updateUI()
         }
        
+    }
+    
+    @IBAction func bioMovesToggle(sender: AnyObject) {
+        if sender.selectedSegmentIndex == 0 {
+            nameLbl.text = pokemon.name.capitalizedString
+            let img = UIImage(named: "\(pokemon.pokedexId)")
+            mainImg.image = img
+            currentEvoImg.image = img
+            self.updateUI()
+        } else {
+            descriptionLbl.text = "Move List:"
+            descriptionLbl.text = "\(pokemon.move)"
+        }
+        
     }
     
     func updateUI() {
@@ -70,4 +86,5 @@ class PokemonDetailVC: UIViewController {
         
     }
 
+    
 }
